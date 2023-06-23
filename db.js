@@ -1,7 +1,7 @@
 
 
 const mongoose = require('mongoose');
-const mongooseURI='mongodb+srv://talhariaz:talhariaz@cluster0.k2itfyk.mongodb.net/portel?retryWrites=true&w=majority'
+const mongooseURI='mongodb+srv://talhariaz:talhariaz@cluster0.k2itfyk.mongodb.net/formdata?retryWrites=true&w=majority'
 const connectToMongo=()=>{
   mongoose.connect(mongooseURI, { useNewUrlParser: true })
   .then(() => console.log('MongoDB connected'))

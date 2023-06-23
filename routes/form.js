@@ -16,6 +16,7 @@ router.post('/createuser', [
   body('online', 'please select online/physical').isLength({ min: 1 }),
   body('course', 'please select course').isLength({ min: 1 }),
   body('education', 'please select education level').isLength({ min: 1 }), 
+  body('photo', 'please upload the screenshot of payment').isLength({min:2})
 ], async (req, res) => {
   let success=false;
   const errors = validationResult(req);
