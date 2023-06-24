@@ -16,6 +16,7 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/api/form',require('./routes/form'));
+app.use('/api/admin',require('./routes/admin'));
 
 const server=app.listen(port, () => {
   console.log(`app listening on port ${port}`)
