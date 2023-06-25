@@ -54,6 +54,45 @@ router.post('/createuser', [
     res.status(500).json({error,success})
 }
 }
-)
 
+)
+router.get('/getuser', async (req,res)=>{
+
+  const admin=req.header('admin');
+  const online=req.header('online');
+  let success=false;
+  try {
+      const data=await Student.find({admin,online});
+      success=true;
+      res.json({data,success});
+  } catch (error) {
+      res.json({error,success});
+  }
+})
+
+
+router.get('/totalonline', async (req,res)=>{
+
+ 
+  let success=false;
+  try {
+      const data=await Student.countDocuments({online:'online'})
+      success=true;
+      res.json({data,success});
+  } catch (error) {
+      res.json({error,success});
+  }
+})
+router.get('/totalphysical', async (req,res)=>{
+
+ const online='physical'
+  let success=false;
+  try {
+      const data=await Student.countDocuments({online});
+      success=true;
+      res.json({data,success});
+  } catch (error) {
+      res.json({error,success});
+  }
+})
 module.exports = router;
