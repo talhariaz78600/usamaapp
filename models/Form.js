@@ -52,7 +52,7 @@ const FormSchema= new Schema({
         required:true,
     },
     photo:{
-        type:Buffer,
+        type:String,
     },
 
     admin:{
